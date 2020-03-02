@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		FC6ADA9F240D9BFE003C614C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6ADA9E240D9BFE003C614C /* AppDelegate.swift */; };
 		FC6ADAA1240D9BFE003C614C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6ADAA0240D9BFE003C614C /* SceneDelegate.swift */; };
-		FC6ADAA3240D9BFE003C614C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6ADAA2240D9BFE003C614C /* ViewController.swift */; };
-		FC6ADAA6240D9BFE003C614C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6ADAA4240D9BFE003C614C /* Main.storyboard */; };
 		FC6ADAA8240D9C01003C614C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6ADAA7240D9C01003C614C /* Assets.xcassets */; };
 		FC6ADAAB240D9C01003C614C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6ADAA9240D9C01003C614C /* LaunchScreen.storyboard */; };
+		FCCB3298240DB2BC0093DDE3 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB3297240DB2BC0093DDE3 /* MainNavigationController.swift */; };
+		FCCB329D240DB30C0093DDE3 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB329C240DB30C0093DDE3 /* HomeScreenViewController.swift */; };
+		FCCB32A0240DB7540093DDE3 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */; };
+		FCCB32A3240DBEDF0093DDE3 /* SectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A2240DBEDF0093DDE3 /* SectionImageView.swift */; };
+		FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC6ADA9B240D9BFE003C614C /* NBCNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBCNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6ADA9E240D9BFE003C614C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6ADAA0240D9BFE003C614C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC6ADAA2240D9BFE003C614C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC6ADAA5240D9BFE003C614C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6ADAA7240D9C01003C614C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6ADAAA240D9C01003C614C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6ADAAC240D9C01003C614C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCB3297240DB2BC0093DDE3 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		FCCB329C240DB30C0093DDE3 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
+		FCCB32A2240DBEDF0093DDE3 /* SectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImageView.swift; sourceTree = "<group>"; };
+		FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		FC6ADA9D240D9BFE003C614C /* NBCNews */ = {
 			isa = PBXGroup;
 			children = (
+				FCCB3296240DB2A10093DDE3 /* Views */,
+				FCCB3295240DB21C0093DDE3 /* Resources */,
+			);
+			path = NBCNews;
+			sourceTree = "<group>";
+		};
+		FCCB3295240DB21C0093DDE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				FC6ADA9E240D9BFE003C614C /* AppDelegate.swift */,
 				FC6ADAA0240D9BFE003C614C /* SceneDelegate.swift */,
-				FC6ADAA2240D9BFE003C614C /* ViewController.swift */,
-				FC6ADAA4240D9BFE003C614C /* Main.storyboard */,
 				FC6ADAA7240D9C01003C614C /* Assets.xcassets */,
 				FC6ADAA9240D9C01003C614C /* LaunchScreen.storyboard */,
 				FC6ADAAC240D9C01003C614C /* Info.plist */,
 			);
-			path = NBCNews;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCCB3296240DB2A10093DDE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB32A4240DC0040093DDE3 /* Labels */,
+				FCCB32A1240DBEC20093DDE3 /* Image Views */,
+				FCCB3299240DB2CC0093DDE3 /* Navigation Controllers */,
+				FCCB329E240DB6D30093DDE3 /* Table View Cells */,
+				FCCB329A240DB2DE0093DDE3 /* View Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCCB3299240DB2CC0093DDE3 /* Navigation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB3297240DB2BC0093DDE3 /* MainNavigationController.swift */,
+			);
+			path = "Navigation Controllers";
+			sourceTree = "<group>";
+		};
+		FCCB329A240DB2DE0093DDE3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB329C240DB30C0093DDE3 /* HomeScreenViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FCCB329E240DB6D30093DDE3 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		FCCB32A1240DBEC20093DDE3 /* Image Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB32A2240DBEDF0093DDE3 /* SectionImageView.swift */,
+			);
+			path = "Image Views";
+			sourceTree = "<group>";
+		};
+		FCCB32A4240DC0040093DDE3 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +192,6 @@
 			files = (
 				FC6ADAAB240D9C01003C614C /* LaunchScreen.storyboard in Resources */,
 				FC6ADAA8240D9C01003C614C /* Assets.xcassets in Resources */,
-				FC6ADAA6240D9BFE003C614C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6ADAA3240D9BFE003C614C /* ViewController.swift in Sources */,
+				FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */,
+				FCCB3298240DB2BC0093DDE3 /* MainNavigationController.swift in Sources */,
+				FCCB329D240DB30C0093DDE3 /* HomeScreenViewController.swift in Sources */,
+				FCCB32A3240DBEDF0093DDE3 /* SectionImageView.swift in Sources */,
 				FC6ADA9F240D9BFE003C614C /* AppDelegate.swift in Sources */,
+				FCCB32A0240DB7540093DDE3 /* SectionTableViewCell.swift in Sources */,
 				FC6ADAA1240D9BFE003C614C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +215,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC6ADAA4240D9BFE003C614C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC6ADAA5240D9BFE003C614C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC6ADAA9240D9C01003C614C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C39EPG5VUE;
-				INFOPLIST_FILE = NBCNews/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NBCNews/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C39EPG5VUE;
-				INFOPLIST_FILE = NBCNews/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NBCNews/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
