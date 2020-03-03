@@ -11,10 +11,37 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     let sectionsTableView = UITableView()
+    
+    var sections: [Section] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.sectionsTableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSectionsTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.getSections { [weak self] (sections) in
+            guard let self = self,
+                  let sections = sections else { return }
+            
+            var sectionWithTitle: [Section] = []
+            
+            // Filters out any news sections that don't have the section title "Section" and don't have a previewImage
+            for section in sections {
+                if section.newsType == "Section" && section.previewImage != nil {
+                    sectionWithTitle.append(section)
+                }
+            }
+            self.sections = sectionWithTitle
+        }
     }
     
 
@@ -23,7 +50,8 @@ class HomeScreenViewController: UIViewController {
         sectionsTableView.translatesAutoresizingMaskIntoConstraints = false
         
         sectionsTableView.frame = view.bounds
-        sectionsTableView.rowHeight = 120
+        sectionsTableView.rowHeight = 200
+        sectionsTableView.separatorStyle = .none
         sectionsTableView.delegate = self
         sectionsTableView.dataSource = self
         
@@ -33,14 +61,14 @@ class HomeScreenViewController: UIViewController {
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseID) as? SectionTableViewCell else { return UITableViewCell() }
         
-        cell.configure()
-        cell.sectionTitleLabel.text = "TITLE GOES HERE"
+        let section = sections[indexPath.row]
+        cell.set(sections: section)
         
         return cell
     }

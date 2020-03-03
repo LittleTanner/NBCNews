@@ -26,5 +26,17 @@ class SectionImageView: UIImageView {
         image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
+        layer.cornerRadius = 20
+    }
+    
+    func downloadPreviewImage(fromURL url: String) {
+        NetworkManager.shared.downloadPreviewImage(from: url) { [weak self] (previewImage) in
+            guard let self = self,
+                let previewImage = previewImage else { return }
+            
+            DispatchQueue.main.async {
+                self.image = previewImage
+            }
+        }
     }
 }

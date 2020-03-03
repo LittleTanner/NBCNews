@@ -16,6 +16,8 @@
 		FCCB32A0240DB7540093DDE3 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */; };
 		FCCB32A3240DBEDF0093DDE3 /* SectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A2240DBEDF0093DDE3 /* SectionImageView.swift */; };
 		FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */; };
+		FCCB32AA240DC7620093DDE3 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A9240DC7620093DDE3 /* Section.swift */; };
+		FCCB32AC240DC8EB0093DDE3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32AB240DC8EB0093DDE3 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		FCCB32A2240DBEDF0093DDE3 /* SectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImageView.swift; sourceTree = "<group>"; };
 		FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleLabel.swift; sourceTree = "<group>"; };
+		FCCB32A9240DC7620093DDE3 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		FCCB32AB240DC8EB0093DDE3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		FC6ADA9D240D9BFE003C614C /* NBCNews */ = {
 			isa = PBXGroup;
 			children = (
+				FCCB32A8240DC7230093DDE3 /* Models */,
+				FCCB32A7240DC7190093DDE3 /* Controllers */,
 				FCCB3296240DB2A10093DDE3 /* Views */,
 				FCCB3295240DB21C0093DDE3 /* Resources */,
 			);
@@ -130,6 +136,22 @@
 				FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		FCCB32A7240DC7190093DDE3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB32AB240DC8EB0093DDE3 /* NetworkManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FCCB32A8240DC7230093DDE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCCB32A9240DC7620093DDE3 /* Section.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCB32AC240DC8EB0093DDE3 /* NetworkManager.swift in Sources */,
 				FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */,
 				FCCB3298240DB2BC0093DDE3 /* MainNavigationController.swift in Sources */,
 				FCCB329D240DB30C0093DDE3 /* HomeScreenViewController.swift in Sources */,
 				FCCB32A3240DBEDF0093DDE3 /* SectionImageView.swift in Sources */,
 				FC6ADA9F240D9BFE003C614C /* AppDelegate.swift in Sources */,
+				FCCB32AA240DC7620093DDE3 /* Section.swift in Sources */,
 				FCCB32A0240DB7540093DDE3 /* SectionTableViewCell.swift in Sources */,
 				FC6ADAA1240D9BFE003C614C /* SceneDelegate.swift in Sources */,
 			);

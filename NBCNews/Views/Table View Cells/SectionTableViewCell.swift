@@ -24,22 +24,30 @@ class SectionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func set(sections: Section) {
+        guard let newsTitle = sections.newsTitle else { return }
+        sectionTitleLabel.text = newsTitle.uppercased()
+        guard let previewImage = sections.previewImage else { return }
+        sectionImageView.downloadPreviewImage(fromURL: previewImage)
+    }
+    
     func configure() {
         addSubview(sectionImageView)
         addSubview(sectionTitleLabel)
         
-        let padding: CGFloat = 20
+        
+        let padding: CGFloat = 10
         
         NSLayoutConstraint.activate([
-            sectionImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            sectionImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            sectionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            sectionImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            sectionImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding/2),
+            sectionImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            sectionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            sectionImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding/2),
             
             sectionTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             sectionTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             sectionTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            sectionTitleLabel.heightAnchor.constraint(equalToConstant: 24)
+            sectionTitleLabel.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
 }
