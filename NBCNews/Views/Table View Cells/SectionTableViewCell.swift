@@ -35,6 +35,7 @@ class SectionTableViewCell: UITableViewCell {
         addSubview(sectionImageView)
         addSubview(sectionTitleLabel)
         
+        backgroundColor = .systemGray5
         
         let padding: CGFloat = 10
         

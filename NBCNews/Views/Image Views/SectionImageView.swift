@@ -23,7 +23,6 @@ class SectionImageView: UIImageView {
     
     private func configure() {
         clipsToBounds = true
-        image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
         layer.cornerRadius = 20
