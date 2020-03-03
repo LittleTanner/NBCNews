@@ -16,7 +16,7 @@ class NewsPreviewsTableViewCell: UITableViewCell {
     let headlineLabel = UILabel()
     let summaryLabel = UILabel()
     
-    var section: Section?
+    var placeholderImage = UIImage(named: "nbcLogo")
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,6 +41,8 @@ class NewsPreviewsTableViewCell: UITableViewCell {
         addSubview(previewImageView)
         addSubview(headlineLabel)
         addSubview(summaryLabel)
+        
+        previewImageView.image = placeholderImage
         
         headlineLabel.translatesAutoresizingMaskIntoConstraints = false
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
