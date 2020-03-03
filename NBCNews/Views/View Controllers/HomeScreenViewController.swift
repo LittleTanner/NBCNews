@@ -72,4 +72,11 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedSectionCell = sections[indexPath.row]
+        let destinationViewController = NewsPreviewsViewController(section: selectedSectionCell)
+        
+        navigationController?.pushViewController(destinationViewController, animated: true)
+    }
 }

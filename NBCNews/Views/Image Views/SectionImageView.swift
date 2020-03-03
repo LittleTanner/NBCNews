@@ -23,7 +23,6 @@ class SectionImageView: UIImageView {
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
-        layer.cornerRadius = 20
     }
     
     func downloadPreviewImage(fromURL url: String) {

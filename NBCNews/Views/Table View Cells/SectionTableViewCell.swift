@@ -37,7 +37,7 @@ class SectionTableViewCell: UITableViewCell {
         
         backgroundColor = .systemGray5
         
-        let padding: CGFloat = 10
+        let padding: CGFloat = 2
         
         NSLayoutConstraint.activate([
             sectionImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding/2),

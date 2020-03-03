@@ -18,6 +18,8 @@
 		FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */; };
 		FCCB32AA240DC7620093DDE3 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32A9240DC7620093DDE3 /* Section.swift */; };
 		FCCB32AC240DC8EB0093DDE3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32AB240DC8EB0093DDE3 /* NetworkManager.swift */; };
+		FCCB32AE240DE6400093DDE3 /* NewsPreviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32AD240DE6400093DDE3 /* NewsPreviewsViewController.swift */; };
+		FCCB32B0240DE6DA0093DDE3 /* NewsPreviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB32AF240DE6DA0093DDE3 /* NewsPreviewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FCCB32A5240DC0200093DDE3 /* SectionTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleLabel.swift; sourceTree = "<group>"; };
 		FCCB32A9240DC7620093DDE3 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		FCCB32AB240DC8EB0093DDE3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FCCB32AD240DE6400093DDE3 /* NewsPreviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPreviewsViewController.swift; sourceTree = "<group>"; };
+		FCCB32AF240DE6DA0093DDE3 /* NewsPreviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPreviewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				FCCB329C240DB30C0093DDE3 /* HomeScreenViewController.swift */,
+				FCCB32AD240DE6400093DDE3 /* NewsPreviewsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FCCB329F240DB7540093DDE3 /* SectionTableViewCell.swift */,
+				FCCB32AF240DE6DA0093DDE3 /* NewsPreviewsTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCB32B0240DE6DA0093DDE3 /* NewsPreviewsTableViewCell.swift in Sources */,
 				FCCB32AC240DC8EB0093DDE3 /* NetworkManager.swift in Sources */,
 				FCCB32A6240DC0200093DDE3 /* SectionTitleLabel.swift in Sources */,
+				FCCB32AE240DE6400093DDE3 /* NewsPreviewsViewController.swift in Sources */,
 				FCCB3298240DB2BC0093DDE3 /* MainNavigationController.swift in Sources */,
 				FCCB329D240DB30C0093DDE3 /* HomeScreenViewController.swift in Sources */,
 				FCCB32A3240DBEDF0093DDE3 /* SectionImageView.swift in Sources */,

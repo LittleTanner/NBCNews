@@ -17,9 +17,24 @@ struct Section: Codable {
         case newsType = "type"
         case newsTitle = "header"
         case previewImage = "tease"
+        case newsArticles = "items"
     }
     
     let newsType: String
     let newsTitle: String?
     let previewImage: String?
+    let newsArticles: [NewsArticle]?
 }
+
+struct NewsArticle: Codable {
+    enum CodingKeys: String, CodingKey {
+        case newsHeadline = "headline"
+        case previewImage = "tease"
+        case newsSummary = "summary"
+    }
+    
+    let newsHeadline: String?
+    let previewImage: String?
+    let newsSummary: String?
+}
+
