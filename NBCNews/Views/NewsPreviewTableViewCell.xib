@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewXIBCell" rowHeight="160" id="KGk-i7-Jjw" customClass="NewsPreviewTableViewCell" customModule="NBCNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nbcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="G54-3r-LNg" customClass="SectionImageView" customModule="NBCNews" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="30R-Fp-dhD"/>
+                            <constraint firstAttribute="height" constant="80" id="OPc-4H-uOT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0y-KL-OaY">
+                        <rect key="frame" x="100" y="10" width="210" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="OIz-Tj-iA2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-k3-LT1">
+                        <rect key="frame" x="10" y="100" width="300" height="50"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="s0y-KL-OaY" secondAttribute="trailing" constant="10" id="A2a-Vz-tjS"/>
+                    <constraint firstAttribute="bottom" secondItem="HXA-k3-LT1" secondAttribute="bottom" constant="10" id="YfJ-ku-ApR"/>
+                    <constraint firstItem="HXA-k3-LT1" firstAttribute="top" secondItem="G54-3r-LNg" secondAttribute="bottom" constant="10" id="ZSK-dG-eAL"/>
+                    <constraint firstItem="s0y-KL-OaY" firstAttribute="leading" secondItem="G54-3r-LNg" secondAttribute="trailing" constant="10" id="hZu-pZ-WsS"/>
+                    <constraint firstItem="G54-3r-LNg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="n6u-ju-vfp"/>
+                    <constraint firstAttribute="trailing" secondItem="HXA-k3-LT1" secondAttribute="trailing" constant="10" id="sLe-aO-f7w"/>
+                    <constraint firstItem="HXA-k3-LT1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sYh-GK-gJw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="s0y-KL-OaY" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="10" id="Lzt-NL-lWn"/>
+                <constraint firstItem="G54-3r-LNg" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="10" id="ejH-98-7R2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="headlineLabel" destination="s0y-KL-OaY" id="TDp-Lt-P7Z"/>
+                <outlet property="previewImageView" destination="G54-3r-LNg" id="O68-hm-QQn"/>
+                <outlet property="summaryLabel" destination="HXA-k3-LT1" id="LUd-Fg-Msq"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="nbcLogo" width="342.5" height="342.5"/>
+    </resources>
+</document>

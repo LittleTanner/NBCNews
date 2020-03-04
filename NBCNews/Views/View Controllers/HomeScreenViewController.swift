@@ -22,9 +22,10 @@ class HomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureSectionsTableView()
         sectionsTableView.delegate = self
         sectionsTableView.dataSource = self
+        let nib = UINib(nibName: "SectionsTableViewCell", bundle: nil)
+        sectionsTableView.register(nib, forCellReuseIdentifier: "SectionXIBCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,20 +46,6 @@ class HomeScreenViewController: UIViewController {
             self.sections = sectionWithTitle
         }
     }
-    
-
-//    func configureSectionsTableView() {
-//        view.addSubview(sectionsTableView)
-//        sectionsTableView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        sectionsTableView.frame = view.bounds
-//        sectionsTableView.rowHeight = 200
-//        sectionsTableView.separatorStyle = .none
-//        sectionsTableView.delegate = self
-//        sectionsTableView.dataSource = self
-        
-//        sectionsTableView.register(SectionTableViewCell.self, forCellReuseIdentifier: SectionTableViewCell.reuseID)
-//    }
 }
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
@@ -67,7 +54,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as? SectionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SectionXIBCell") as? SectionsTableViewCell else { return UITableViewCell() }
         
         let section = sections[indexPath.row]
         cell.set(sections: section)
@@ -75,23 +62,11 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedSectionCell = sections[indexPath.row]
-//        let destinationViewController = NewsPreviewsViewController(section: selectedSectionCell)
-//        
-//        navigationController?.pushViewController(destinationViewController, animated: true)
-//    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toNewsPreviews" {
-            
-            if let destinationViewController = segue.destination as? NewsPreviewsViewController {
-                
-                if let indexPath = sectionsTableView.indexPathForSelectedRow {
-                    let section = sections[indexPath.row]
-                    destinationViewController.section = section
-                }
-            }
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedSectionCell = sections[indexPath.row]
+        let destinationTableViewController = NewsPreviewsTableViewController()
+        destinationTableViewController.section = selectedSectionCell
+
+        navigationController?.pushViewController(destinationTableViewController, animated: true)
     }
 }

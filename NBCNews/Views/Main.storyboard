@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" rowHeight="200" id="WGx-bm-wpq" customClass="SectionTableViewCell" customModule="NBCNews" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionCell" rowHeight="200" id="WGx-bm-wpq" customClass="SectionsTableViewCell" customModule="NBCNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WGx-bm-wpq" id="0Nm-0S-s7J">
@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="tL8-fH-w92" kind="show" identifier="toNewsPreviews" id="fgw-E2-gaz"/>
+                                            <segue destination="rMg-Dc-cep" kind="show" id="gIP-01-jUy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -51,46 +51,34 @@
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="136.60714285714286"/>
         </scene>
-        <!--News Previews View Controller-->
-        <scene sceneID="CHl-gq-FNb">
+        <!--News Previews Table View Controller-->
+        <scene sceneID="qSc-ee-q5p">
             <objects>
-                <viewController id="tL8-fH-w92" customClass="NewsPreviewsViewController" customModule="NBCNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QMq-W9-ZlX">
+                <tableViewController id="rMg-Dc-cep" customClass="NewsPreviewsTableViewController" customModule="NBCNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Rv-dk-eRh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-2b-IDm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsPreviewCell" id="PN6-VU-TKA" customClass="NewsPreviewsTableViewCell" customModule="NBCNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="160"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PN6-VU-TKA" id="wOz-rv-1aP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="6fm-2b-IDm" firstAttribute="leading" secondItem="fdB-Dx-XxP" secondAttribute="leading" id="00e-BU-F2u"/>
-                            <constraint firstItem="fdB-Dx-XxP" firstAttribute="trailing" secondItem="6fm-2b-IDm" secondAttribute="trailing" id="A4e-nK-BEP"/>
-                            <constraint firstItem="6fm-2b-IDm" firstAttribute="top" secondItem="fdB-Dx-XxP" secondAttribute="top" id="Gns-YF-TwU"/>
-                            <constraint firstItem="fdB-Dx-XxP" firstAttribute="bottom" secondItem="6fm-2b-IDm" secondAttribute="bottom" id="O15-MS-qeN"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="fdB-Dx-XxP"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="6zW-Tv-8cM"/>
-                    <connections>
-                        <outlet property="newsPreviewsTableView" destination="6fm-2b-IDm" id="e8b-aF-zLN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-qp-FIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="previewCell" rowHeight="160" id="u3G-aD-8qn" customClass="NewsPreviewTableViewCell" customModule="NBCNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3G-aD-8qn" id="dnx-Ht-bgk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rMg-Dc-cep" id="KDH-LD-Ruk"/>
+                            <outlet property="delegate" destination="rMg-Dc-cep" id="QxE-Yj-rZD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="RLE-hE-QCT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Svm-by-Al9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="137"/>
+            <point key="canvasLocation" x="1820" y="137"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gVJ-0e-KGy">
