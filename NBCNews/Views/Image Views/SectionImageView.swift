@@ -22,7 +22,6 @@ class SectionImageView: UIImageView {
     
     private func configure() {
         clipsToBounds = true
-        translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
     }
     

@@ -21,7 +21,6 @@ class SectionTitleLabel: UILabel {
     }
     
     private func configure() {
-        translatesAutoresizingMaskIntoConstraints = false
         textAlignment = .center
         textColor = .white
         font = UIFont.systemFont(ofSize: 28, weight: .bold)

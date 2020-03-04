@@ -26,9 +26,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="rMg-Dc-cep" kind="show" id="gIP-01-jUy"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -51,34 +48,45 @@
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="136.60714285714286"/>
         </scene>
-        <!--News Previews Table View Controller-->
-        <scene sceneID="qSc-ee-q5p">
+        <!--News Preview View Controller-->
+        <scene sceneID="IIA-bP-u0q">
             <objects>
-                <tableViewController id="rMg-Dc-cep" customClass="NewsPreviewsTableViewController" customModule="NBCNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Rv-dk-eRh">
+                <viewController storyboardIdentifier="NewsPreviewID" id="wl6-ok-BQ6" customClass="NewsPreviewViewController" customModule="NBCNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FRN-C4-Ui1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D5w-Ib-zEJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsPreviewCell" id="IJC-jM-8fU">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IJC-jM-8fU" id="Oej-bU-VlU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="previewCell" rowHeight="160" id="u3G-aD-8qn" customClass="NewsPreviewTableViewCell" customModule="NBCNews" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="160"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3G-aD-8qn" id="dnx-Ht-bgk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="rMg-Dc-cep" id="KDH-LD-Ruk"/>
-                            <outlet property="delegate" destination="rMg-Dc-cep" id="QxE-Yj-rZD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="RLE-hE-QCT"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Svm-by-Al9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="w0I-Up-ME7" firstAttribute="bottom" secondItem="D5w-Ib-zEJ" secondAttribute="bottom" id="HLx-G5-6dh"/>
+                            <constraint firstItem="D5w-Ib-zEJ" firstAttribute="leading" secondItem="w0I-Up-ME7" secondAttribute="leading" id="LgC-7I-LIy"/>
+                            <constraint firstItem="w0I-Up-ME7" firstAttribute="trailing" secondItem="D5w-Ib-zEJ" secondAttribute="trailing" id="S80-sz-Nbr"/>
+                            <constraint firstItem="D5w-Ib-zEJ" firstAttribute="top" secondItem="w0I-Up-ME7" secondAttribute="top" id="dvM-xc-dlC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w0I-Up-ME7"/>
+                    </view>
+                    <connections>
+                        <outlet property="newsPreviewTableView" destination="D5w-Ib-zEJ" id="Kah-o8-fyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSb-9K-LCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="137"/>
+            <point key="canvasLocation" x="1842" y="137"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gVJ-0e-KGy">
