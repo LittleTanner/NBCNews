@@ -10,7 +10,7 @@ import UIKit
 
 class SectionTableViewCell: UITableViewCell {
     
-    static let reuseID = "SectionCell"
+//    static let reuseID = "SectionCell"
     
     let sectionImageView = SectionImageView(frame: .zero)
     let sectionTitleLabel = SectionTitleLabel(frame: .zero)
@@ -21,7 +21,8 @@ class SectionTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        configure()
     }
     
     func set(sections: Section) {
@@ -36,6 +37,7 @@ class SectionTableViewCell: UITableViewCell {
         addSubview(sectionTitleLabel)
         
         backgroundColor = .systemGray5
+        
         
         let padding: CGFloat = 2
         

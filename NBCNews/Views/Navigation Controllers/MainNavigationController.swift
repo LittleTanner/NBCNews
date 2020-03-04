@@ -12,12 +12,12 @@ class MainNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [createHomeScreenViewController()]
+//        viewControllers = [createHomeScreenViewController()]
     }
     
-    func createHomeScreenViewController() -> HomeScreenViewController {
-        let homeScreenViewController = HomeScreenViewController()
-        homeScreenViewController.title = "News"
-        return homeScreenViewController
-    }
+//    func createHomeScreenViewController() -> HomeScreenViewController {
+//        let homeScreenViewController = HomeScreenViewController()
+//        homeScreenViewController.title = "News"
+//        return homeScreenViewController
+//    }
 }

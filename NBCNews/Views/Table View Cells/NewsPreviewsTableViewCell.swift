@@ -10,7 +10,7 @@ import UIKit
 
 class NewsPreviewsTableViewCell: UITableViewCell {
     
-    static let reuseID = "NewsPreviewCell"
+//    static let reuseID = "NewsPreviewCell"
     
     let previewImageView = SectionImageView(frame: .zero)
     let headlineLabel = UILabel()
@@ -24,7 +24,8 @@ class NewsPreviewsTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        configure()
     }
     
     func set(newsArticle: NewsArticle) {
