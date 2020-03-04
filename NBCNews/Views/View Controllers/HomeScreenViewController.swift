@@ -10,7 +10,7 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
-    let sectionsTableView = UITableView()
+    @IBOutlet weak var sectionsTableView: UITableView!
     
     var sections: [Section] = [] {
         didSet {
@@ -22,7 +22,10 @@ class HomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSectionsTableView()
+        sectionsTableView.delegate = self
+        sectionsTableView.dataSource = self
+        let nib = UINib(nibName: "SectionsTableViewCell", bundle: nil)
+        sectionsTableView.register(nib, forCellReuseIdentifier: "SectionXIBCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,20 +46,6 @@ class HomeScreenViewController: UIViewController {
             self.sections = sectionWithTitle
         }
     }
-    
-
-    func configureSectionsTableView() {
-        view.addSubview(sectionsTableView)
-        sectionsTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        sectionsTableView.frame = view.bounds
-        sectionsTableView.rowHeight = 200
-        sectionsTableView.separatorStyle = .none
-        sectionsTableView.delegate = self
-        sectionsTableView.dataSource = self
-        
-        sectionsTableView.register(SectionTableViewCell.self, forCellReuseIdentifier: SectionTableViewCell.reuseID)
-    }
 }
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
@@ -65,7 +54,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseID) as? SectionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SectionXIBCell") as? SectionsTableViewCell else { return UITableViewCell() }
         
         let section = sections[indexPath.row]
         cell.set(sections: section)
@@ -75,7 +64,10 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedSectionCell = sections[indexPath.row]
-        let destinationViewController = NewsPreviewsViewController(section: selectedSectionCell)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let destinationViewController = storyboard.instantiateViewController(identifier: "NewsPreviewID") as? NewsPreviewViewController else { return }
+        destinationViewController.section = selectedSectionCell
         
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
