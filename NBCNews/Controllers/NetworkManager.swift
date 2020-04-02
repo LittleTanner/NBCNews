@@ -12,6 +12,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
+    var downloadedImagesDict = [String: UIImage]()
     
     func getSections(completed: @escaping ([Section]?) -> Void) {
         
@@ -55,6 +56,11 @@ class NetworkManager {
     
     func downloadPreviewImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
         
+        guard self.downloadedImagesDict[urlString] == nil else {
+            let image = self.downloadedImagesDict[urlString]
+            completed(image)
+            return
+        }
         guard let url = URL(string: urlString) else { completed(nil); return }
         
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -64,8 +70,11 @@ class NetworkManager {
                 let data = data,
                 let image = UIImage(data: data) else { completed(nil); return }
             
+            self.downloadedImagesDict[urlString] = image
             completed(image)
+            return
         }
+        
         dataTask.resume()
     }
 }
